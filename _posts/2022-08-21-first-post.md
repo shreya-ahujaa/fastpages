@@ -17,9 +17,9 @@ title: First Post
 > “Knowledge is power.” – Francis Bacon
 
 ## Scrum Team Trimester 1
- Name | Grade |
+| Name | Grade |
 |-|-|
 | Shreya Ahuja | 11 |
 | Aadya Daita | 11 |
 | Ellie Rozenkrantz | 11 |
-| Bria Gilliam | 11 |
+| Bria Gilliam | 12 |
