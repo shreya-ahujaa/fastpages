@@ -7,18 +7,19 @@
 <title>Primitive Data Types | fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Primitive Data Types" />
+<meta name="author" content="Shreya Ahuja" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://shreya-ahujaa.github.io/fastpages/2022/08/23/primitive.html" />
-<meta property="og:url" content="https://shreya-ahujaa.github.io/fastpages/2022/08/23/primitive.html" />
+<meta name="description" content="TPT Notes for Primitive Data Types" />
+<meta property="og:description" content="TPT Notes for Primitive Data Types" />
+<link rel="canonical" href="https://shreya-ahujaa.github.io/fastpages/fastpages/notes/2022/08/23/primitive.html" />
+<meta property="og:url" content="https://shreya-ahujaa.github.io/fastpages/fastpages/notes/2022/08/23/primitive.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2022-08-23T00:00:00-05:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Primitive Data Types" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-23T00:00:00-05:00","datePublished":"2022-08-23T00:00:00-05:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Primitive Data Types","mainEntityOfPage":{"@type":"WebPage","@id":"https://shreya-ahujaa.github.io/fastpages/2022/08/23/primitive.html"},"url":"https://shreya-ahujaa.github.io/fastpages/2022/08/23/primitive.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Shreya Ahuja"},"dateModified":"2022-08-23T00:00:00-05:00","datePublished":"2022-08-23T00:00:00-05:00","description":"TPT Notes for Primitive Data Types","headline":"Primitive Data Types","mainEntityOfPage":{"@type":"WebPage","@id":"https://shreya-ahujaa.github.io/fastpages/fastpages/notes/2022/08/23/primitive.html"},"url":"https://shreya-ahujaa.github.io/fastpages/fastpages/notes/2022/08/23/primitive.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://shreya-ahujaa.github.io/fastpages/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -73,9 +74,11 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Primitive Data Types</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-23T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Primitive Data Types</h1><p class="page-description">TPT Notes for Primitive Data Types</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-23T00:00:00-05:00" itemprop="datePublished">
         Aug 23, 2022
-      </time>
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Shreya Ahuja</span></span>
        • <span class="read-time" title="Estimated read time">
     
     
@@ -83,6 +86,16 @@ window.onload = wrap_img;
     
 </span></p>
 
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/fastpages/categories/#fastpages">fastpages</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/fastpages/categories/#notes">notes</a>
+        
+      
+      </p>
     
 
     
@@ -116,7 +129,11 @@ window.onload = wrap_img;
       </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <!--
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Primitive-vs-Wrapper">Primitive vs Wrapper </a></li>
+<li class="toc-entry toc-h2"><a href="#Python">Python </a></li>
+<li class="toc-entry toc-h2"><a href="#Java">Java </a></li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -125,18 +142,67 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Python">Python<a class="anchor-link" href="#Python"> </a></h2><ul>
+<h2 id="Primitive-vs-Wrapper">
+<a class="anchor" href="#Primitive-vs-Wrapper" aria-hidden="true"><span class="octicon octicon-link"></span></a>Primitive vs Wrapper<a class="anchor-link" href="#Primitive-vs-Wrapper"> </a>
+</h2>
+<ul>
+<li>Primitive Classes: built in data types and do not need to declare a class in order to use them</li>
+<li>
+<p>Wrappers: not built in data types (Non-Primitive Data Types)</p>
+<ul>
+<li>College Board: String is a Primitive Data Type</li>
+<li>
+<p>Regular Java: String is considered a Non-Primitive data type</p>
+</li>
+<li>
+<p>Capital Letter on Type: Wrapper</p>
+</li>
+<li>Lowercase Letter on Type: Primitives</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<p>Wrapper Classes: is a class and has methods</p>
+<ul>
+<li>this is because you are declaring them</li>
+<li>methods: built in code that can do different functions for you without you having to specify</li>
+</ul>
+</li>
+<li>
+<p>Java C and Java</p>
+<ul>
+<li>Java C runs before Java so that it can be compiled and then run the code that was written</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Python">
+<a class="anchor" href="#Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python<a class="anchor-link" href="#Python"> </a>
+</h2>
+<ul>
 <li>Weak Language because you don't have to manually declare everything such as data types</li>
 </ul>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Java">Java<a class="anchor-link" href="#Java"> </a></h2><ul>
+<h2 id="Java">
+<a class="anchor" href="#Java" aria-hidden="true"><span class="octicon octicon-link"></span></a>Java<a class="anchor-link" href="#Java"> </a>
+</h2>
+<ul>
 <li>Strong Language because objects contain no references to data external to themselves <ul>
 <li>In other words, that mean you have to manually declare everything such as data types</li>
 <li>fundamentally object-oriented</li>
@@ -151,7 +217,15 @@ window.onload = wrap_img;
 
 
 
-  </div><a class="u-url" href="/fastpages/2022/08/23/primitive.html" hidden></a>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="shreya-ahujaa/fastpages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/fastpages/fastpages/notes/2022/08/23/primitive.html" hidden></a>
 </article>
 
       </div>
