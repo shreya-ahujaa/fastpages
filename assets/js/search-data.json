@@ -15,8 +15,8 @@
         ,"post1": {
             "title": "Unit 1: Primitive Types (Collegeboard)",
             "content": "Primitive vs Wrapper . Primitive Classes: built in data types and do not need to declare a class in order to use them | Wrappers: not built in data types (Non-Primitive Data Types) . College Board: String is a Primitive Data Type | Regular Java: String is considered a Non-Primitive data type . | Capital Letter on Type: Wrapper . | Lowercase Letter on Type: Primitives | . | . Wrapper Classes: is a class and has methods . this is because you are declaring them | methods: built in code that can do different functions for you without you having to specify | . | Java C and Java . Java C runs before Java so that it can be compiled and then run the code that was written | . | . Python . Weak Language because you don&#39;t have to manually declare everything such as data types | . Java . Strong Language because objects contain no references to data external to themselves In other words, that mean you have to manually declare everything such as data types | fundamentally object-oriented | . | . public class Primitive { int x = 8; double y = 8.86; boolean b = true; String s = &quot;hi!&quot;; } .",
-            "url": "https://shreya-ahujaa.github.io/fastpages/fastpages/notes/primitives/2022/08/23/primitive.html",
-            "relUrl": "/fastpages/notes/primitives/2022/08/23/primitive.html",
+            "url": "https://shreya-ahujaa.github.io/fastpages/fastpages/notes/primitives/2022/08/23/primitive-collegeboard.html",
+            "relUrl": "/fastpages/notes/primitives/2022/08/23/primitive-collegeboard.html",
             "date": " • Aug 23, 2022"
         }
         
