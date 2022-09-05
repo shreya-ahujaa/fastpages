@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Object Oriented Programming Notes | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Object Oriented Programming Notes" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Lesson 2: Java Lab" />
+<meta property="og:description" content="Lesson 2: Java Lab" />
+<link rel="canonical" href="https://shreya-ahujaa.github.io/fastpages/2022/09/05/Object-Oriented-Programming-Notes.html" />
+<meta property="og:url" content="https://shreya-ahujaa.github.io/fastpages/2022/09/05/Object-Oriented-Programming-Notes.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-09-05T00:00:00-05:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Object Oriented Programming Notes" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-09-05T00:00:00-05:00","datePublished":"2022-09-05T00:00:00-05:00","description":"Lesson 2: Java Lab","headline":"Object Oriented Programming Notes","mainEntityOfPage":{"@type":"WebPage","@id":"https://shreya-ahujaa.github.io/fastpages/2022/09/05/Object-Oriented-Programming-Notes.html"},"url":"https://shreya-ahujaa.github.io/fastpages/2022/09/05/Object-Oriented-Programming-Notes.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://shreya-ahujaa.github.io/fastpages/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpages/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpages/about/">About Me</a><a class="page-link" href="/fastpages/search/">Search</a><a class="page-link" href="/fastpages/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Object Oriented Programming Notes</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-09-05T00:00:00-05:00" itemprop="datePublished">
+        Sep 5, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      7 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p><strong>Lesson 2: Java Lab</strong></p>
+
+<p><strong>- class header</strong> - consists of the class keyword and the name of the class</p>
+
+<p><strong>- integrated development environment (IDE)</strong> - a software application for writing, compiling, testing, and debugging program code</p>
+
+<p>○ in our case, that would be Visual Studio Code</p>
+
+<p><strong>- software</strong> - a collection of instructions that is run by a computer</p>
+
+<p><strong>- source code</strong> - a collection of programming commands</p>
+
+<p><strong>- syntax</strong> - the rules for how a programmer must write code for a computer to understand</p>
+
+<p><strong>- syntax error</strong> - a mistake in the code that does not follow a programming language’s syntax</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image4.png" alt="" /></p>
+
+<p><strong><em>Key Learnings from Lesson 2</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>made a class and object</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>allowed the painter to move and take paint, then turn left</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>in other words, learned how to use different methods on the object</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 3: The Neighborhood</strong></p>
+
+<p>- <strong>attribute</strong> - a characteristic of an object</p>
+
+<p>- <strong>behavior</strong> - an action that an object can perform</p>
+
+<p>- <strong>bug</strong> - an error in the code</p>
+
+<p>- <strong>class</strong> - a programmer-defined blueprint from which objects are created</p>
+
+<p>- <strong>constructor</strong> - a block of code that has the same name as the class and tells the computer how to create a new object</p>
+
+<p>- <strong>debugging</strong> - finding and fixing problems in an algorithm or program</p>
+
+<p>- <strong>instantiate</strong> - to call the constructor to create an object</p>
+
+<p>- <strong>object</strong> - an instance of a class</p>
+
+<p>- <strong>object-oriented programming</strong> - an approach to creating and using models of physical or imagined objects</p>
+
+<p>- <strong>package</strong> - a collection of similar classes</p>
+
+<p>- <strong>state</strong> - the attributes of an object that are represented by its instance variables</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image12.png" alt="" /></p>
+
+<p><strong><em>Key Learnings from Lesson 3</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>Blueprints define the attributes and behaviors than an object can have and can analyze Painter</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Practiced creating Painter objects using the “new” keyword</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 4: Navigating and Painting</strong></p>
+
+<p>- <strong>Procedural Abstraction</strong> - allows a programmer to use a method by knowing what the method does even if they do not know how the method was written</p>
+
+<p>- <strong>void method</strong> - a method that performs an action but does not return a value</p>
+
+<p>- <strong>argument</strong> - a value passed to a method or constructor when the method or constructor is called</p>
+
+<p>- <strong>dot operator</strong> - used to call a method in a class</p>
+
+<p>- <strong>method</strong> - a named set of instructions to perform a task</p>
+
+<p>- <strong>parameter</strong> - a variable in the method or constructor signature that defines the type of value to receive when the - method or constructor is called</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image14.png" alt="" /></p>
+
+<p><strong><em>Key Learnings from Lesson 4:</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>Painter class has methods to navigate and paint the neighborhood</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>learned the syntax for calling methods</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>learned to debug syntax errors</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 5: One-Way Selection Statements</strong></p>
+
+<p>- <strong>boolean</strong> - a primitive data type that can be either true or false</p>
+
+<p>- <strong>if statement</strong> - a conditional statement that only executes when the condition is true</p>
+
+<p>- <strong>condition</strong> - determines whether or not to execute a block of code</p>
+
+<p>- <strong>conditional statement</strong> - a statement that only executes when a condition is true</p>
+
+<p>- <strong>logic error</strong> - an error that occurs when the code runs but does not do what was expected</p>
+
+<p>- <strong>return</strong> - to exit a method and go back to the point in the program that called it with the requested value or information</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image9.png" alt="" /></p>
+
+<p><strong><em>Key Learnings from Lesson 5</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>learning to use conditional statements in java</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>program can make decisions based on the current state of the Painter</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Identifying strategies for debugging</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 6: PainterPlus</strong></p>
+
+<p>- <strong>super keyword</strong> - a keyword used to refer to the superclass</p>
+
+<p>- <strong>constructor signature</strong> - the first line of the constructor which includes the public keyword, the constructor name, and the values to specify when an object is created</p>
+
+<p>- <strong>inheritance</strong> - an object-oriented programming principle where a subclass inherits the attributes and behaviors of a superclass</p>
+
+<p>- <strong>subclass</strong> - a class that extends a superclass and inherits its attributes and behaviors</p>
+
+<p>- <strong>superclass</strong> - a class that can be extended to create subclasses</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image10.png" alt="" /></p>
+
+<p><strong><em>Key Learnings From Lesson 6</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>needed to consider the need for designing specialized types of classes</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>learned about inheritance to create a new type of Painter called PainterPlus</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>learned how to add new behaviors to expand capabilities while using old</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 7: Writing Methods</strong></p>
+
+<p>- <strong>method signature</strong> - consists of a name and parameter list</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image8.png" alt="" /></p>
+
+<p><strong><em>Key Learnings from Lesson 7</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>write and use a new void method in Painter Plus</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>new behaviors between superclasses and sunglasses to identity situations when to write new methods in the superclass versus in the subclass</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 8: Code Reviews</strong></p>
+
+<p>- <strong>code review</strong> - the process of examining code and providing feedback to improve the quality and functionality of the program</p>
+
+<p>- <strong>comment</strong> - a text note that is ignored by the compiler to explain or annotate the code</p>
+
+<p>- <strong>documentation</strong> - written descriptions of the purpose and functionality of code</p>
+
+<p>- <strong>programming style</strong> - a set of guidelines for formatting program code</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image3.png" alt="" /></p>
+
+<p><strong><em>Key Learnings from Lesson 8</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>// is comment for one line</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>/* */ is for comments spanning multiple lines</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>learning importance of code reviews to give and receive feedback</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 9: Loops</strong></p>
+
+<p>- <strong>while loop</strong> - a control structure which executes a block of code repeatedly as long as a condition is true</p>
+
+<p>- <strong>algorithm</strong> - a set of instructions to solve a problem or accomplish a task</p>
+
+<p>- <strong>control structure</strong> - a conditional or iteration statement which affects the flow of a program</p>
+
+<p>- <strong>efficient</strong> - getting the best outcome with the least amount of waste</p>
+
+<p>- <strong>infinite loop</strong> - a loop where the Boolean expression always evaluates to true</p>
+
+<p>- <strong>iteration statement (loop)</strong> - a control structure that repeatedly executes a block of code</p>
+
+<p>- <strong>pseudocode</strong> - a plain language description of the steps in an algorithm</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image13.png" alt="" /></p>
+
+<p><strong><em>Key Learnings From Lesson 9</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>selection statements to execute if the condition is true</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>iteration using while loops</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>developing algorithms using selection statements and iteration along with implement our own algorithms</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 10: Two-Way Selection Statements</strong></p>
+
+<p>- <strong>NOT ( ! ) operator</strong> - a logical operator that returns true when the operand is false and returns false when the operand is true</p>
+
+<p>- <strong>if-else statement (two-way selection statement)</strong> - specifies a block of code to execute when the condition is true and a block of code to execute when the condition is false</p>
+
+<p>- <strong>logical operator</strong> - an operator that returns a Boolean value</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image7.png" alt="" /></p>
+
+<p><strong><em>Key Learnings from Lesson 10</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>expanded knowledge of selection statements and Boolean expressions to use two way selection statements</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>NOT (!) logical operator</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>checked the state of an object and executed a specific set of instructions</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 11: Debugging Strategies</strong></p>
+
+<p>- <strong>concatenation</strong> - joining two strings together</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image6.png" alt="" /></p>
+
+<p><strong><em>Key Learnings From Lesson 11</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>learned to print information in console as debugging tool</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>expand our PainterPlus to implement a new method that shows the state of the PainterPlus object</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>troubleshoot other errors</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 12: Decomposition and Design</strong></p>
+
+<p>- <strong>Method Decomposition</strong> - the process of breaking a problem down into smaller parts to write methods for each part</p>
+
+<p>- <strong>edge case</strong> - a bug that occurs at the highest or lowest end of a range of possible values or in extreme situations</p>
+
+<p>- <strong>redundant code</strong> - code that is unnecessary</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image11.png" alt="" /></p>
+
+<p><strong><em>Key Learnings From Lesson 12</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>learned to write pseudocode to plan algorithms</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Decomposition and top-down design to deconstruct problems into smaller tasks</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>Translate algorithms into methods and consider edge cases to improve programs</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 13: PatternPainter</strong></p>
+
+<p>- <strong>inheritance hierarchy</strong> - where a class serves as a superclass for more than one subclass</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image2.png" alt="" /></p>
+
+<p><strong><em>Key Learnings From Lesson 13</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>creating new types of painters with special behaviors</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>writing a new subclass that extends PainterPlus</p>
+    </blockquote>
+
+    <ul>
+      <li>
+        <blockquote>
+          <p>practicing decomposition to develop new algorithms</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Lesson 14: Background Painter</strong></p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image5.png" alt="" /></p>
+
+<p><strong><em>Key Learnings from Lesson 14</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>creating a new additional subclass that extends PainterPlus</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>practice using decomposition to develop algorithms</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>multiple objects in order to reach goal and help the painter</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p><strong>Lesson 15: Open Source Code</strong></p>
+
+<p>- <strong>open source code</strong> - code that is freely available for anyone to use, study, change, and distribute</p>
+
+<p><img src="https://shreya-ahujaa.github.io/fastpages/assets/img/2022-09-05-Object-Oriented-Programming-Notes/media/image1.png" alt="" /></p>
+
+<p><strong><em>Key Learnings from Lesson 15</em></strong></p>
+
+<ul>
+  <li>
+    <blockquote>
+      <p>examining open source code</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>connect real world application and concepts we have learned throughout this unit</p>
+    </blockquote>
+  </li>
+  <li>
+    <blockquote>
+      <p>review the characteristics of software engineers</p>
+    </blockquote>
+  </li>
+</ul>
+
+  </div><a class="u-url" href="/fastpages/2022/09/05/Object-Oriented-Programming-Notes.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" target="_blank" title="fastai"><svg class="svg-icon grey"><use xlink:href="/fastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" target="_blank" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/fastpages/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
