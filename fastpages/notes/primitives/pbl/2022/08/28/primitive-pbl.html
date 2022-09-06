@@ -263,7 +263,9 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GPACalculator</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import static</span> <span class="nn">java.lang.Math</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GPACalculator</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">numSubjects</span><span class="p">;</span>    <span class="c1">// the number of subjects taken by the student --&gt; best primitive is integer</span>
     <span class="kt">float</span> <span class="n">gradeValue</span><span class="p">;</span>   <span class="c1">// the sum of the grades of all subjects --&gt; best primitive is floating point because grade can be decimal</span>
     <span class="kt">float</span> <span class="n">GPAResult</span><span class="p">;</span>    <span class="c1">// the final GPA calculated and stored by application --&gt; best primitive is floating point </span>
