@@ -226,7 +226,13 @@ layout: notebook
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Image read error: &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">);</span>
         <span class="p">}</span>
 
+
+
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">img</span><span class="p">.</span><span class="na">getHeight</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">img</span><span class="p">.</span><span class="na">getWidth</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">Color</span> <span class="n">col</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="p">(</span><span class="n">img</span><span class="p">.</span><span class="na">getRGB</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">));</span>
                 <span class="kt">double</span> <span class="n">pixVal</span> <span class="o">=</span> <span class="p">(((</span><span class="n">col</span><span class="p">.</span><span class="na">getRed</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.30</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span><span class="p">.</span><span class="na">getBlue</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.59</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">col</span>
@@ -246,6 +252,7 @@ layout: notebook
             <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
+<span class="p">}</span>
 
     <span class="c1">// conversion table, there may be better out there ie https://www.billmongan.com/Ursinus-CS173-Fall2020/Labs/ASCIIArt</span>
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">asciiChar</span><span class="p">(</span><span class="kt">double</span> <span class="n">g</span><span class="p">)</span> <span class="p">{</span>
@@ -411,10 +418,9 @@ layout: notebook
         <span class="n">collage</span><span class="p">.</span><span class="na">convertToRed</span><span class="p">();</span>
         <span class="n">collage</span><span class="p">.</span><span class="na">convertToGreen</span><span class="p">();</span>
         <span class="n">collage</span><span class="p">.</span><span class="na">convertToBlue</span><span class="p">();</span>
-        <span class="c1">//collage.printStats(&quot;Gray&quot;);</span>
-        <span class="c1">//collage.resize(33);</span>
+        <span class="n">collage</span><span class="p">.</span><span class="na">resize</span><span class="p">(</span><span class="mi">33</span><span class="p">);</span>
         <span class="c1">//collage.printStats(&quot;Scaled&quot;);</span>
-        <span class="c1">//collage.convertToAscii();</span>
+        <span class="n">collage</span><span class="p">.</span><span class="na">convertToAscii</span><span class="p">();</span>
 
     <span class="p">}</span>
 <span class="p">}</span>
