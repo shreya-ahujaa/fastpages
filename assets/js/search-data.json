@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Number Facts with RapidAPI",
-            "content": "Text Year Number Type . | | | |",
+            "content": "Text Year Number Type . | | | | Hack Questions . Benefit of using and API? . Easy access to Internet data Extract data, consolidate and organize needed information | More productive than looking at a large table from outside sources to search for the information you need | . | When using an API managed by computers, less human effort is required and workflows can be easily updated to become faster and more productive | New content and information can be published and shared with your entire audience efficiently | APIs allow developers to be more productive by reusing code in complex but repetitive processes. | They don’t need to start from scratch as the API specifies how to assemble software components in a program. | APIs exist to make it easy to interface with other developers’ applications. | . . Benefit(s) of backend implementation? . Implementing APIs in backend allows us to control specific logistics about how the API is run Control frequency of access to API (ie stay under limit/per month with backend controls | If there is a limit, the backend part of the code for the API will be able to regulate this so it does not break the frontend | . | .",
             "url": "https://shreya-ahujaa.github.io/fastpages/data/numbers",
             "relUrl": "/data/numbers",
             "date": " • Oct 2, 2022"
