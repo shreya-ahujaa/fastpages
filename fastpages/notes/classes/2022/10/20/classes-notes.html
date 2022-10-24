@@ -9,8 +9,8 @@
 <meta property="og:title" content="Unit 5: Writing Classes (Collegeboard)" />
 <meta name="author" content="Shreya Ahuja" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Learning the fundamentals of Java, a programming language, as well as other foundational concepts for coding." />
-<meta property="og:description" content="Learning the fundamentals of Java, a programming language, as well as other foundational concepts for coding." />
+<meta name="description" content="Classes are a main part of Java and are what run Java and object-oriented programming." />
+<meta property="og:description" content="Classes are a main part of Java and are what run Java and object-oriented programming." />
 <link rel="canonical" href="https://shreya-ahujaa.github.io/fastpages/fastpages/notes/classes/2022/10/20/classes-notes.html" />
 <meta property="og:url" content="https://shreya-ahujaa.github.io/fastpages/fastpages/notes/classes/2022/10/20/classes-notes.html" />
 <meta property="og:site_name" content="fastpages" />
@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Unit 5: Writing Classes (Collegeboard)" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Shreya Ahuja"},"dateModified":"2022-10-20T00:00:00-05:00","datePublished":"2022-10-20T00:00:00-05:00","description":"Learning the fundamentals of Java, a programming language, as well as other foundational concepts for coding.","headline":"Unit 5: Writing Classes (Collegeboard)","mainEntityOfPage":{"@type":"WebPage","@id":"https://shreya-ahujaa.github.io/fastpages/fastpages/notes/classes/2022/10/20/classes-notes.html"},"url":"https://shreya-ahujaa.github.io/fastpages/fastpages/notes/classes/2022/10/20/classes-notes.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Shreya Ahuja"},"dateModified":"2022-10-20T00:00:00-05:00","datePublished":"2022-10-20T00:00:00-05:00","description":"Classes are a main part of Java and are what run Java and object-oriented programming.","headline":"Unit 5: Writing Classes (Collegeboard)","mainEntityOfPage":{"@type":"WebPage","@id":"https://shreya-ahujaa.github.io/fastpages/fastpages/notes/classes/2022/10/20/classes-notes.html"},"url":"https://shreya-ahujaa.github.io/fastpages/fastpages/notes/classes/2022/10/20/classes-notes.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://shreya-ahujaa.github.io/fastpages/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -74,7 +74,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Unit 5: Writing Classes (Collegeboard)</h1><p class="page-description">Learning the fundamentals of Java, a programming language, as well as other foundational concepts for coding.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-20T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Unit 5: Writing Classes (Collegeboard)</h1><p class="page-description">Classes are a main part of Java and  are what run Java and object-oriented programming.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-20T00:00:00-05:00" itemprop="datePublished">
         Oct 20, 2022
       </time>• 
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -82,7 +82,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      3 min read
     
 </span></p>
 
@@ -167,6 +167,12 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Scope-and-Access">Scope and Access </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Scope">Scope </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Homework:-2021-FRQs-Part-1A-and-3A">Homework: 2021 FRQs Part 1A and 3A </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#2021-FRQ-1A">2021 FRQ 1A </a></li>
+<li class="toc-entry toc-h3"><a href="#2021-FRQ-3A">2021 FRQ 3A </a></li>
 </ul>
 </li>
 </ul><!--
@@ -433,6 +439,89 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Homework:-2021-FRQs-Part-1A-and-3A">
+<a class="anchor" href="#Homework:-2021-FRQs-Part-1A-and-3A" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homework: 2021 FRQs Part 1A and 3A<a class="anchor-link" href="#Homework:-2021-FRQs-Part-1A-and-3A"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2021-FRQ-1A">
+<a class="anchor" href="#2021-FRQ-1A" aria-hidden="true"><span class="octicon octicon-link"></span></a>2021 FRQ 1A<a class="anchor-link" href="#2021-FRQ-1A"> </a>
+</h3>
+<p>Write the WordMatch method scoreGuess. To determine the score to be returned, scoreGuess finds the number of times that guess occurs as a substring of secret and then multiplies that number by the square of the length of guess. Occurrences of guess may overlap within secret. Assume that the length of guess is less than or equal to the length of secret and that guess is not an empty string.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">scoreGuess</span> <span class="p">(</span><span class="n">String</span> <span class="n">guess</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">secret</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">-</span> <span class="n">guess</span><span class="p">.</span><span class="na">length</span><span class="p">(),</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">secret</span><span class="p">.</span><span class="na">substring</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">guess</span><span class="p">.</span><span class="na">length</span><span class="p">()).</span><span class="na">equals</span> <span class="p">(</span><span class="n">guess</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">count</span> <span class="o">*</span> <span class="n">guess</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">*</span> <span class="n">guess</span><span class="p">.</span><span class="na">length</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2021-FRQ-3A">
+<a class="anchor" href="#2021-FRQ-3A" aria-hidden="true"><span class="octicon octicon-link"></span></a>2021 FRQ 3A<a class="anchor-link" href="#2021-FRQ-3A"> </a>
+</h3>
+<p>A high school club maintains information about its members in a MemberInfo object. A MemberInfo object stores a club member’s name, year of graduation, and whether or not the club member is in good standing. A member who is in good standing has fulfilled all the responsibilities of club membership.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">addMembers</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">names</span><span class="p">,</span> <span class="kt">int</span> <span class="n">gradYear</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span> <span class="n">String</span> <span class="n">n</span> <span class="p">:</span> <span class="n">names</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">MemberInfo</span> <span class="n">newMember</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MemberInfo</span> <span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">gradYear</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+        <span class="n">memberList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">newMember</span><span class="p">)</span>
+    <span class="p">}</span>   
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
