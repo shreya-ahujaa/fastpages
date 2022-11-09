@@ -1,10 +1,13 @@
 ---
+keywords: fastai
 title: "College Board 2014 Practice MCQ Reflection"
 toc: true
 branch: master
 badges: true
 comments: true
 author: Shreya Ahuja
+categories: [fastpages, notes, collegeboard]
+nb_path: _notebooks/2022-09-11-collegeboard-review.ipynb
 layout: notebook
 ---
 
