@@ -1,4 +1,3 @@
-
 ---
 keywords: fastai
 title: "FRQ #1 - Methods and Control Structures"
