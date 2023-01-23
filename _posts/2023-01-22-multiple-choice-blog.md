@@ -19,24 +19,29 @@ My final score was 60/66 which I was pretty happy with. This would be in range f
 
 - Question 19
     - In the answer choice that I chose, the expressions are not equivalent when a has the value 4, b has the value 3, c has the value 2, and d has the value 1. After looking at the problem more carefully, I realized that c < d for the code segment to work. If c is greater than or equal to then this statement wouldn't be equivalent to the one given. Therefore, my answer would be wrong and A would be correct.
+<img width="977" alt="image" src="https://user-images.githubusercontent.com/89224064/213992885-f93d3758-8af4-4b79-8745-7ab5d92f7e95.png">
 
 
 - Question 35
    - My answer was incorrect because the original code segment prints 10. The option that I chose causes the code segment to result in 11. The loop executes the same number of times as in the original code segment, but the initial value of count is 1. This would mean that D.
+<img width="979" alt="image" src="https://user-images.githubusercontent.com/89224064/213992953-20f89e7a-d493-44f4-940e-44e98bbd51f4.png">
 
 
 
 - Question 43
    - When I was doing the test, I thought that both implementations worked as intended, but the only different could be that  the first one would allow the result to come faster. However, once I looked at the problem again I realized that the implementation doesn’t work because it would cause an out of bounds exception (sum[j-1] in the first iteration would be sum[-1] which is not right. This would then mean that in order for the code segment to work, D would be the correct answer.
+<img width="974" alt="image" src="https://user-images.githubusercontent.com/89224064/213993021-bd04d25c-af0a-4734-a059-147162c9dca9.png">
 
 
 
 - Question 58
    - My answer was incorrect because pos should be equal j because each iteration you don't want the index to be reset back to 0. In other words, it would not make sense for the position to be reset to the 0th index every time the sorting method takes place. I did not think about this when I was first taking the test, but with this knowledge, the correct answer would be B. 
+<img width="1006" alt="image" src="https://user-images.githubusercontent.com/89224064/213992830-cc559525-62bb-4fe0-8e0a-f34834d31c0d.png">
 
 
 - Question 64
     - In Code Segments 1, the code does not print the array elements in order from left to right using an enhanced for loop. Code segment I uses elements as indices. The first element of arr is 1, and arr[1] is 2; the second element is 2, and arr[2] is 4; the third element is 4, and arr[4] is 3; etc. Option 3 is the only one that allows the given code segment to print the array elements in order from left to right using an enhanced for loop
+<img width="983" alt="image" src="https://user-images.githubusercontent.com/89224064/213992776-2203deda-035f-4d4e-a826-2d1b69341337.png">
 
 
 
