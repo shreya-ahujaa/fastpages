@@ -1,6 +1,6 @@
 ---
 toc: true
-layout: post
+layout: base
 description: my first post on fastpages with markdown!
 categories: [markdown]
 title: First Post
