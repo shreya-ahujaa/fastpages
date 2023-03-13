@@ -82,7 +82,7 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Initial-Extra-Credit-on-Seed">Initial Extra Credit on Seed<a class="anchor-link" href="#Initial-Extra-Credit-on-Seed"> </a></h2>
+<h1 id="Data-Types-Lecture-and-Hacks">Data Types Lecture and Hacks<a class="anchor-link" href="#Data-Types-Lecture-and-Hacks"> </a></h1><h2 id="Initial-Extra-Credit-on-Seed">Initial Extra Credit on Seed<a class="anchor-link" href="#Initial-Extra-Credit-on-Seed"> </a></h2>
 </div>
 </div>
 </div>
@@ -265,10 +265,341 @@ Main method after changeAtomicInteger(n): n = 15 hash code = 639588921
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Hacks">Hacks<a class="anchor-link" href="#Hacks"> </a></h2><h3 id="Small-Code-Excersice">Small Code Excersice<a class="anchor-link" href="#Small-Code-Excersice"> </a></h3><h3 id="Exploring-Teacher-Code">Exploring Teacher Code<a class="anchor-link" href="#Exploring-Teacher-Code"> </a></h3><h3 id="Exploring-AP-Classroom-FRQ">Exploring AP Classroom FRQ<a class="anchor-link" href="#Exploring-AP-Classroom-FRQ"> </a></h3>
+<h2 id="Hacks">Hacks<a class="anchor-link" href="#Hacks"> </a></h2><h3 id="Small-Code-Excersice">Small Code Excersice<a class="anchor-link" href="#Small-Code-Excersice"> </a></h3>
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exploring-Teacher-Code">Exploring Teacher Code<a class="anchor-link" href="#Exploring-Teacher-Code"> </a></h3><h4 id="Methods-and-Control-Structures">Methods and Control Structures<a class="anchor-link" href="#Methods-and-Control-Structures"> </a></h4><ul>
+<li><p>Methods</p>
+<ul>
+<li>methods are also known as functions and procedures</li>
+<li>they are blocks of code that perform specific tasks</li>
+<li>methods can be called from other parts of a program to perform the required task</li>
+<li>they can accept input parameters, process those inputs, and return an output</li>
+<li>for instance, if you have written instructions to draw a star in the method, it will do that task</li>
+</ul>
+</li>
+<li><p>Control Structures</p>
+<ul>
+<li>control structures can be considered as the building blocks of computer programs and describe the flow of execution of code</li>
+<li>they are commands that enable a program to make decisions and follow one path or another</li>
+<li>a program is usually not limited to a linear sequence of instructions as it can repeat code or bypass sections if they are not needed</li>
+<li>they control how many times a block of code is executed, which code is executed, and in what order</li>
+</ul>
+</li>
+<li><p>Types</p>
+<ul>
+<li>conditional statements: program makes decisions based on a condition (if/else, if/else if)</li>
+<li>loops: iterate/repeat code block (for/while/enhanced for)</li>
+<li>switch statements: select from several possible options based on a variable</li>
+</ul>
+</li>
+</ul>
+<h4 id="Diverse-Array">Diverse Array<a class="anchor-link" href="#Diverse-Array"> </a></h4><ul>
+<li>the matrix code shown contains methods and control structures<ul>
+<li>there are multiple methods that allow different processes to happen within the code</li>
+<li>there are also multiple control structures that control the execution of the matrix code (order and when things should happen)</li>
+</ul>
+</li>
+<li><p>Examples in Matrix Code</p>
+<ul>
+<li>loops</li>
+<li>for</li>
+<li>while</li>
+<li>if statements</li>
+</ul>
+</li>
+<li><p>Main Takeaway: Most code segment that we see and write include and are related to methods and control structures. It is very hard to have code with neither of these things included in them</p>
+</li>
+</ul>
+<h4 id="DoNothingByValue">DoNothingByValue<a class="anchor-link" href="#DoNothingByValue"> </a></h4><ul>
+<li>changing a variable but the variable doesn't actually change because it is changing the subvalue/temporary value and not the actual value</li>
+<li>changing a variable only happens at a large scale<ul>
+<li>can not do it locally within this function/method</li>
+</ul>
+</li>
+</ul>
+<h4 id="IntBy-Reference">IntBy Reference<a class="anchor-link" href="#IntBy-Reference"> </a></h4><ul>
+<li>by using the IntByReference for objects a and b, integers are passed by reference, which allows for modifications of the values within the methods <ul>
+<li>these changes can then be reflected outside of the method as well</li>
+</ul>
+</li>
+<li>swapping the integers as type int, which is a primitive, wouldn't allow for modifications in a method to be reflected outside the method which is important to have</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntByReference</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+
+    <span class="c1">// all-arg constructor</span>
+    <span class="kd">public</span> <span class="nf">IntByReference</span><span class="p">(</span><span class="n">Integer</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="na">value</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setValue</span><span class="p">(</span><span class="n">Integer</span> <span class="n">value</span><span class="p">){</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">value</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">swapToLowHighOrder</span><span class="p">(</span><span class="n">IntByReference</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">.</span><span class="na">value</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">value</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">i</span><span class="p">.</span><span class="na">value</span><span class="p">;</span>
+            <span class="n">i</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swapper</span><span class="p">(</span><span class="kt">int</span> <span class="n">n0</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">IntByReference</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IntByReference</span><span class="p">(</span><span class="n">n0</span><span class="p">);</span>
+        <span class="n">IntByReference</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IntByReference</span><span class="p">(</span><span class="n">n1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Before: &quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+        <span class="n">a</span><span class="p">.</span><span class="na">swapToLowHighOrder</span><span class="p">(</span><span class="n">b</span><span class="p">);</span>  
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;After: &quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">ags</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">IntByReference</span><span class="p">.</span><span class="na">swapper</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">);</span>
+        <span class="n">IntByReference</span><span class="p">.</span><span class="na">swapper</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+        <span class="n">IntByReference</span><span class="p">.</span><span class="na">swapper</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">IntByReference</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Before: 20 12
+After: 12 20
+
+Before: 12 20
+After: 12 20
+
+Before: 12 -2
+After: -2 12
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Menu-Code">Menu Code<a class="anchor-link" href="#Menu-Code"> </a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exploring-AP-Classroom-FRQ">Exploring AP Classroom FRQ<a class="anchor-link" href="#Exploring-AP-Classroom-FRQ"> </a></h3><h4 id="2021-Free-Response-Question">2021 Free Response Question<a class="anchor-link" href="#2021-Free-Response-Question"> </a></h4><p>The question involves the WordMatch class, which stores a secret string and provides methods that compare other strings to that secret string. You will write two methods in the WordMatch class.</p>
+<ol>
+<li>a. Write the WordMatch method scoreGuess. To determine the score to be returned, scoreGuess finds the number of times that guess occurs as a substring of secret and then multiplies that number by the square of the length of guess. Occurrences of guess may overlap within secret. Assume that the length of guess is less than or equal to the length of secret and that guess is not an empty string.</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">scoreGuess</span> <span class="p">(</span><span class="n">String</span> <span class="n">guess</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">secret</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">-</span> <span class="n">guess</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">secret</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">guess</span><span class="p">.</span><span class="na">length</span><span class="p">()).</span><span class="na">equals</span><span class="p">(</span><span class="n">guess</span><span class="p">)){</span>
+            <span class="n">count</span> <span class="o">++</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>b. Write the WordMatch method findBetter Guess, which returns the better guess of its two String parameters, guess1 and guess2. If the scoreGuess method returns different values of guess1 and guess2, then the guess with the higher score is returned. If the scoreGuess method returns the same value of guess1 and guess2, then the alphabetically greater guess is returned.</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">findBetterGuess</span><span class="p">(</span><span class="n">String</span> <span class="n">guess1</span><span class="p">,</span> <span class="n">String</span> <span class="n">guess2</span><span class="p">){</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">scoreGuess</span> <span class="p">(</span><span class="n">guess1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">scoreGuess</span> <span class="p">(</span><span class="n">guess2</span><span class="p">)){</span>
+        <span class="k">return</span> <span class="n">guess1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">scoreGuess</span> <span class="p">(</span><span class="n">guess2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">scoreGuess</span> <span class="p">(</span><span class="n">guess1</span><span class="p">)){</span>
+        <span class="k">return</span> <span class="n">guess2</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">guess1</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">guess2</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)){</span>
+        <span class="k">return</span> <span class="n">guess1</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">guess2</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Advanced-Running-FRQ">Advanced Running FRQ<a class="anchor-link" href="#Advanced-Running-FRQ"> </a></h4>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">WordMatch</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">secret</span><span class="p">;</span>   <span class="c1">// initializes and declares the variable secret </span>
+
+    <span class="kd">public</span> <span class="nf">WordMatch</span> <span class="p">(</span><span class="n">String</span> <span class="n">secret</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// constructs WordMatch object with an initialization of secret string</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">secret</span> <span class="o">=</span> <span class="n">secret</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSecret</span><span class="p">(</span><span class="n">String</span> <span class="n">secret</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// sets the secret value</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">secret</span> <span class="o">=</span> <span class="n">secret</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">scoreGuess</span><span class="p">(</span><span class="n">String</span> <span class="n">guess</span><span class="p">)</span> <span class="p">{</span> 
+
+    <span class="c1">// shows the use of control structures (in this example, it is a for loop)</span>
+
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="n">secret</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="n">n</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// continues to loop over the entirety of secret String</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">secret</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">n</span><span class="p">).</span><span class="na">indexOf</span><span class="p">(</span><span class="n">guess</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// start at 0 index </span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>    <span class="c1">// increment the count each time it goes through the for loop</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">count</span> <span class="o">*</span> <span class="n">guess</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">*</span> <span class="n">guess</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="c1">// returns the score (product of how many times the guess appeared in secret and the square of the length of guess)</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">findBetterGuess</span> <span class="p">(</span><span class="n">String</span> <span class="n">guess1</span><span class="p">,</span> <span class="n">String</span> <span class="n">guess2</span><span class="p">)</span> <span class="p">{</span> 
+        
+        <span class="c1">// this is using the method of scoreGuess above and is inputs guess1 and guess2 into scoreGuess to check which one is closer to the guess</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">scoreGuess</span><span class="p">(</span><span class="n">guess1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">scoreGuess</span><span class="p">(</span><span class="n">guess2</span><span class="p">))</span> <span class="p">{</span>   <span class="c1">// checking if the score of guess 1 is greater than the score of guess2</span>
+            <span class="k">return</span> <span class="n">guess1</span><span class="p">;</span>   <span class="c1">// if score1 is greater, then it is the better guess</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">scoreGuess</span><span class="p">(</span><span class="n">guess1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">scoreGuess</span><span class="p">(</span><span class="n">guess2</span><span class="p">))</span> <span class="p">{</span>  <span class="c1">// checking if the score of guess 2 is greater than the score of guess1</span>
+            <span class="k">return</span> <span class="n">guess2</span><span class="p">;</span> <span class="c1">// if score2 is greater, then it is the better guess</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">guess1</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">guess1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// compare guess1 and guess2 and the alphabetically greater one is returned (in the case the scores are equal)</span>
+            <span class="k">return</span> <span class="n">guess1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">guess2</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>  
+
+        <span class="n">Scanner</span> <span class="n">sc</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+
+        <span class="c1">// System.out.println(&quot;Enter a guess: &quot;);</span>
+        <span class="n">String</span> <span class="n">guess</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+
+        <span class="n">String</span> <span class="n">secret</span> <span class="o">=</span> <span class="s">&quot;birthday&quot;</span><span class="p">;</span>   <span class="c1">// the secret word</span>
+        <span class="n">WordMatch</span> <span class="n">wordMatch</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WordMatch</span><span class="p">(</span><span class="n">secret</span><span class="p">);</span>
+
+        <span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="n">wordMatch</span><span class="p">.</span><span class="na">scoreGuess</span><span class="p">(</span><span class="n">guess</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Score For &quot;</span> <span class="o">+</span> <span class="n">guess</span> <span class="o">+</span> <span class="s">&quot; Is: &quot;</span> <span class="o">+</span> <span class="n">score</span><span class="p">);</span>
+
+        <span class="c1">// System.out.println(&quot;Enter another guess: &quot; +);</span>
+        <span class="n">String</span> <span class="n">guess1</span> <span class="o">=</span> <span class="n">sc</span><span class="p">.</span><span class="na">nextLine</span><span class="p">();</span>
+
+
+        <span class="kt">int</span> <span class="n">score1</span> <span class="o">=</span> <span class="n">wordMatch</span><span class="p">.</span><span class="na">scoreGuess</span><span class="p">(</span><span class="n">guess1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Score For &quot;</span> <span class="o">+</span> <span class="n">guess1</span> <span class="o">+</span> <span class="s">&quot; Is: &quot;</span> <span class="o">+</span> <span class="n">score1</span><span class="p">);</span>
+
+
+        <span class="n">String</span> <span class="n">compare</span> <span class="o">=</span> <span class="n">wordMatch</span><span class="p">.</span><span class="na">findBetterGuess</span><span class="p">(</span><span class="n">guess</span><span class="p">,</span> <span class="n">guess1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;The Better Guess Between Options &quot;</span> <span class="o">+</span> <span class="n">guess</span> <span class="o">+</span> <span class="s">&quot; and &quot;</span> <span class="o">+</span> <span class="n">guess1</span> <span class="o">+</span> <span class="s">&quot; Is: &quot;</span> <span class="o">+</span> <span class="n">compare</span><span class="p">);</span>
+
+        <span class="n">sc</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">WordMatch</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Score For birth Is: 25
+Score For day Is: 9
+The Better Guess Between Options birth and day Is: birth
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
