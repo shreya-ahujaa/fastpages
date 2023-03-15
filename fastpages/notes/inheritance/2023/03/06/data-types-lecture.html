@@ -398,6 +398,227 @@ Main method after changeAtomicInteger(n): n = 15 hash code = 639588921
 </ul>
 </li>
 </ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">Triple</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="p">,</span> <span class="n">T3</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="n">T1</span> <span class="n">one</span><span class="p">;</span>
+    <span class="n">T2</span> <span class="n">two</span><span class="p">;</span>
+    <span class="n">T3</span> <span class="n">three</span><span class="p">;</span>
+
+    <span class="n">Triple</span><span class="p">(</span><span class="n">T1</span> <span class="n">one</span><span class="p">,</span> <span class="n">T2</span> <span class="n">two</span><span class="p">,</span> <span class="n">T3</span> <span class="n">three</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">one</span> <span class="o">=</span> <span class="n">one</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">two</span> <span class="o">=</span> <span class="n">two</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">three</span> <span class="o">=</span> <span class="n">three</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">T1</span> <span class="nf">getOne</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">one</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setOne</span><span class="p">(</span><span class="n">T1</span> <span class="n">one</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="na">one</span> <span class="o">=</span> <span class="n">one</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">T2</span> <span class="nf">getTwo</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">two</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTwo</span><span class="p">(</span><span class="n">T2</span> <span class="n">two</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="na">two</span> <span class="o">=</span> <span class="n">two</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">T3</span> <span class="nf">getThree</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">three</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setThree</span><span class="p">(</span><span class="n">T3</span> <span class="n">three</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="na">three</span> <span class="o">=</span> <span class="n">three</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DoNothingByValue</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">word</span><span class="p">;</span>
+
+
+    <span class="c1">// changed to show what is happening</span>
+    <span class="kd">public</span> <span class="nf">DoNothingByValue</span> <span class="p">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="n">String</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">word</span> <span class="o">=</span> <span class="n">word</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;constructor: &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                          <span class="c1">// int array is initialized to 0&#39;s, not needed</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">word</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">// Local instance variables</span>
+    <span class="c1">// IntelliJ shows that something is wrong, calling the values passed as parameters as local</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">changeIt</span><span class="p">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="n">String</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>
+        <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;changeIt: &quot;</span><span class="p">);</span> <span class="c1">// added</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span> <span class="c1">// added</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>   <span class="c1">// added</span>
+
+    <span class="p">}</span>
+
+    <span class="c1">// Variable name are Reference</span>
+    <span class="c1">// names of variables make no difference, they are just references to addresses</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">changeIt2</span><span class="p">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">value</span><span class="p">,</span> <span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">nums</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">;</span>           <span class="c1">// new creates new memory address</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                   <span class="c1">// primitives are pass by value</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> <span class="c1">// all wrapper classes have automatic &quot;new&quot;, same as word = new String(word.substring(0, 5));</span>
+
+        <span class="c1">// this loop changes nums locally</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;changeIt2: &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">nums</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">nums</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+
+    <span class="p">}</span>
+
+
+    <span class="c1">// If you want to change values, think about Return values, but you are limited to one in Java</span>
+    <span class="c1">// changed to show what is happening</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">changeIt3</span><span class="p">(</span><span class="kt">int</span> <span class="o">[]</span> <span class="n">arr</span><span class="p">,</span> <span class="n">String</span> <span class="n">word</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="n">word</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span>    <span class="c1">// wrapper class does a &quot;new&quot; on any assignment</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;changeIt3: &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>                          <span class="c1">// int array is initialized to 0&#39;s, not needed</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">word</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="n">word</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Variable inside of Object Triple are references</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Triple</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="nf">changeIt4</span><span class="p">(</span><span class="n">Triple</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]</span><span class="p">,</span> <span class="n">Integer</span><span class="p">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">T</span><span class="p">.</span><span class="na">setOne</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">5</span><span class="o">]</span><span class="p">);</span>
+        <span class="n">T</span><span class="p">.</span><span class="na">setTwo</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>                   <span class="c1">// primitives are pass by value</span>
+        <span class="n">T</span><span class="p">.</span><span class="na">setThree</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="na">getThree</span><span class="p">().</span><span class="na">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">));</span> <span class="c1">// all wrapper classes have automatic &quot;new&quot;, same as word = new String(word.substring(0, 5));</span>
+
+        <span class="c1">// this loop changes nums locally</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;changeIt4: &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">:</span> <span class="n">T</span><span class="p">.</span><span class="na">getOne</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">T</span><span class="p">.</span><span class="na">getThree</span><span class="p">());</span>
+
+        <span class="k">return</span> <span class="n">T</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="c1">// Original method changed to main in order to be a Tester</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Does nothing</span>
+        <span class="kt">int</span> <span class="o">[]</span> <span class="n">nums</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+        <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;blackboard&quot;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Do Nothings&quot;</span><span class="p">);</span>
+        <span class="c1">// dumb and useless</span>
+        <span class="n">changeIt</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+        <span class="c1">// dumber and useless</span>
+        <span class="n">changeIt2</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;main: &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span> <span class="p">(</span><span class="n">nums</span><span class="o">[</span><span class="n">k</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+
+        <span class="c1">// int[] by reference, return value  -- not complete</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Limited return&quot;</span><span class="p">);</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">nums2</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;limited&quot;</span><span class="p">;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">changeIt3</span><span class="p">(</span><span class="n">nums2</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;main2: &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="p">:</span> <span class="n">nums2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">value</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+
+        <span class="c1">// Class/Object</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Do Something with Class&quot;</span><span class="p">);</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">nums3</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;classy&quot;</span><span class="p">;</span>
+        <span class="n">DoNothingByValue</span> <span class="n">doSomething</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DoNothingByValue</span><span class="p">(</span><span class="n">nums3</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;main3: &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="p">:</span> <span class="n">doSomething</span><span class="p">.</span><span class="na">arr</span><span class="p">)</span> <span class="p">{</span>      <span class="c1">// should be teaching enhanced for loop on arrays</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">doSomething</span><span class="p">.</span><span class="na">val</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">doSomething</span><span class="p">.</span><span class="na">word</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="c1">// Generics</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Do Something with Generics&quot;</span><span class="p">);</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">nums4</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;generics&quot;</span><span class="p">;</span>
+        <span class="n">Triple</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]</span><span class="p">,</span><span class="n">Integer</span><span class="p">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">tri</span> <span class="o">=</span> <span class="n">changeIt4</span><span class="p">(</span><span class="k">new</span> <span class="n">Triple</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">nums4</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">name</span><span class="p">));</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;main: &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="p">:</span> <span class="n">tri</span><span class="p">.</span><span class="na">getOne</span><span class="p">())</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span> <span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">tri</span><span class="p">.</span><span class="na">getTwo</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">tri</span><span class="p">.</span><span class="na">getThree</span><span class="p">());</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="c1">// This class can be used to pass variables by reference</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="IntBy-Reference">IntBy Reference<a class="anchor-link" href="#IntBy-Reference"> </a></h4><ul>
 <li>by using the IntByReference for objects a and b, integers are passed by reference, which allows for modifications of the values within the methods <ul>
 <li>these changes can then be reflected outside of the method as well</li>
@@ -496,6 +717,222 @@ After: -2 12
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="c1">// The MenuRow Class has title and action for individual line item in menu</span>
+<span class="kd">class</span> <span class="nc">MenuRow</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">title</span><span class="p">;</span>       <span class="c1">// menu item title</span>
+    <span class="n">Runnable</span> <span class="n">action</span><span class="p">;</span>    <span class="c1">// menu item action, using Runnable</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Constructor for MenuRow,</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param  title,  is the description of the menu item</span>
+<span class="cm">     * @param  action, is the run-able action for the menu item</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">MenuRow</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">,</span> <span class="n">Runnable</span> <span class="n">action</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">action</span> <span class="o">=</span> <span class="n">action</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Getters</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getTitle</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">title</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="n">Runnable</span> <span class="nf">getAction</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">action</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Runs the action using Runnable (.run)</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">action</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// The Main Class illustrates initializing and using Menu with Runnable action</span>
+<span class="kd">class</span> <span class="nc">Driver</span> <span class="p">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     *  Menu Control Example</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Row initialize</span>
+        <span class="n">MenuRow</span><span class="o">[]</span> <span class="n">rows</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MenuRow</span><span class="o">[]</span><span class="p">{</span>
+            <span class="c1">// lambda style, () -&gt; to point to Class.Method</span>
+            <span class="k">new</span> <span class="n">MenuRow</span><span class="p">(</span><span class="s">&quot;Exit&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)),</span>
+            <span class="k">new</span> <span class="n">MenuRow</span><span class="p">(</span><span class="s">&quot;Do Nothing&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">DoNothingByValue</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)),</span>
+            <span class="k">new</span> <span class="n">MenuRow</span><span class="p">(</span><span class="s">&quot;Swap if Hi-Low&quot;</span><span class="p">,</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="n">IntByReference</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)),</span>
+            <span class="c1">// new MenuRow(&quot;Matrix Reverse&quot;, () -&gt; Matrix.main(null)),</span>
+            <span class="c1">// new MenuRow(&quot;Diverse Array&quot;, () -&gt; Matrix.main(null)),</span>
+            <span class="c1">// new MenuRow(&quot;Random Squirrels&quot;, () -&gt; Number.main(null))</span>
+        <span class="p">};</span>
+
+        <span class="c1">// Menu construction</span>
+        <span class="n">Menu</span> <span class="n">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Menu</span><span class="p">(</span><span class="n">rows</span><span class="p">);</span>
+
+        <span class="c1">// Run menu forever, exit condition contained in loop</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hacks Menu:&quot;</span><span class="p">);</span>
+            <span class="c1">// print rows</span>
+            <span class="n">menu</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+            <span class="c1">// Scan for input</span>
+            <span class="k">try</span> <span class="p">{</span>
+                <span class="n">Scanner</span> <span class="n">scan</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span>
+                <span class="kt">int</span> <span class="n">selection</span> <span class="o">=</span> <span class="n">scan</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
+
+                <span class="c1">// menu action</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="n">MenuRow</span> <span class="n">row</span> <span class="o">=</span> <span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">selection</span><span class="p">);</span>
+                    <span class="c1">// stop menu</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="na">getTitle</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;Exit&quot;</span><span class="p">))</span> <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">scan</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> 
+                            <span class="n">scan</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>  <span class="c1">// scanner resource requires release</span>
+                        <span class="k">return</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="c1">// run option</span>
+                    <span class="n">row</span><span class="p">.</span><span class="na">run</span><span class="p">();</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Invalid selection %d\n&quot;</span><span class="p">,</span> <span class="n">selection</span><span class="p">);</span>
+                <span class="p">}</span>
+
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Not a number&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Menu: custom implementation</span>
+<span class="cm"> * @author     John Mortensen</span>
+<span class="cm"> *</span>
+<span class="cm"> * Uses String to contain Title for an Option</span>
+<span class="cm"> * Uses Runnable to store Class-Method to be run when Title is selected</span>
+<span class="cm"> */</span>
+
+<span class="c1">// The Menu Class has a HashMap of Menu Rows</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Menu</span> <span class="p">{</span>
+    <span class="c1">// Format</span>
+    <span class="c1">// Key {0, 1, 2, ...} created based on order of input menu</span>
+    <span class="c1">// Value {MenuRow0, MenuRow1, MenuRow2,...} each corresponds to key</span>
+    <span class="c1">// MenuRow  {&lt;Exit,Noop&gt;, Option1, Option2, ...}</span>
+    <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">MenuRow</span><span class="o">&gt;</span> <span class="n">menu</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Constructor for Menu,</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param  rows,  is the row data for menu.</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">Menu</span><span class="p">(</span><span class="n">MenuRow</span><span class="o">[]</span> <span class="n">rows</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">MenuRow</span> <span class="n">row</span> <span class="p">:</span> <span class="n">rows</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// Build HashMap for lookup convenience</span>
+            <span class="n">menu</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">,</span> <span class="k">new</span> <span class="n">MenuRow</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="na">getTitle</span><span class="p">(),</span> <span class="n">row</span><span class="p">.</span><span class="na">getAction</span><span class="p">()));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Get Row from Menu,</span>
+<span class="cm">     *</span>
+<span class="cm">     * @param  i,  HashMap key (k)</span>
+<span class="cm">     *</span>
+<span class="cm">     * @return  MenuRow, the selected menu</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">MenuRow</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">menu</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  Iterate through and print rows in HashMap</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Map</span><span class="p">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">MenuRow</span><span class="o">&gt;</span> <span class="n">pair</span> <span class="p">:</span> <span class="n">menu</span><span class="p">.</span><span class="na">entrySet</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">pair</span><span class="p">.</span><span class="na">getKey</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; ==&gt; &quot;</span> <span class="o">+</span> <span class="n">pair</span><span class="p">.</span><span class="na">getValue</span><span class="p">().</span><span class="na">getTitle</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  To test run Driver</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Driver</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">Menu</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hacks Menu:
+0 ==&gt; Exit
+1 ==&gt; Do Nothing
+2 ==&gt; Swap if Hi-Low
+Do Nothings
+changeIt: 0 0 0 0 0 black
+changeIt2: 0 0 0 0 0 black
+main: 1 2 3 4 5 6 blackboard
+
+Limited return
+changeIt3: 0 0 0 0 0 limit
+main2: 0 0 0 0 0 6 limit
+
+Do Something with Class
+constructor: 0 0 0 0 0 class
+main3: 0 0 0 0 0 0 class
+
+Do Something with Generics
+changeIt4: 0 0 0 0 0 gener
+main: 0 0 0 0 0 0 generHacks Menu:
+0 ==&gt; Exit
+1 ==&gt; Do Nothing
+2 ==&gt; Swap if Hi-Low
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Exploring-AP-Classroom-FRQ">Exploring AP Classroom FRQ<a class="anchor-link" href="#Exploring-AP-Classroom-FRQ"> </a></h3><h4 id="2021-Free-Response-Question">2021 Free Response Question<a class="anchor-link" href="#2021-Free-Response-Question"> </a></h4><p>The question involves the WordMatch class, which stores a secret string and provides methods that compare other strings to that secret string. You will write two methods in the WordMatch class.</p>
@@ -515,6 +952,7 @@ After: -2 12
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">scoreGuess</span> <span class="p">(</span><span class="n">String</span> <span class="n">guess</span><span class="p">){</span>
     <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1">// iterates through the length of the array secret and guess, and checks each value of the array to determine if guess is within secret</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">secret</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">-</span> <span class="n">guess</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">secret</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="n">guess</span><span class="p">.</span><span class="na">length</span><span class="p">()).</span><span class="na">equals</span><span class="p">(</span><span class="n">guess</span><span class="p">)){</span>
             <span class="n">count</span> <span class="o">++</span>
