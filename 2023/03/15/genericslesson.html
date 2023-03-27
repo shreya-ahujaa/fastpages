@@ -335,7 +335,7 @@ Bob
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$23$Alphabet; 26
+<pre>class [LREPL.$JShell$32$Alphabet; 26
 Generic: Alphabet listed by title
 Alphabet: A
 Alphabet: B
@@ -364,7 +364,7 @@ Alphabet: X
 Alphabet: Y
 Alphabet: Z
 
-class [LREPL.$JShell$23$Alphabet; 26
+class [LREPL.$JShell$32$Alphabet; 26
 Generic: Alphabet listed by letter
 A
 B
@@ -514,7 +514,7 @@ Z
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$25$Animal; 6
+<pre>class [LREPL.$JShell$34$Animal; 6
 Generic: Animal listed by title
 Animal: Lion, Gold, 8
 Animal: Pig, Pink, 3
@@ -523,7 +523,7 @@ Animal: Cat, Black, 10
 Animal: Kitty, Calico, 1
 Animal: Dog, Brown, 14
 
-class [LREPL.$JShell$25$Animal; 6
+class [LREPL.$JShell$34$Animal; 6
 Generic: Animal listed by name
 Lion
 Pig
@@ -647,7 +647,7 @@ Dog
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$27$Cupcake; 9
+<pre>class [LREPL.$JShell$36$Cupcake; 9
 Generic: Cupcake listed by title
 Cupcake: Red Velvet, Red, 4
 Cupcake: Orange, Orange, 5
@@ -659,7 +659,7 @@ Cupcake: Strawberry, Pink, 10
 Cupcake: Vanilla, Tan, 11
 Cupcake: Chocolate, Brown, 12
 
-class [LREPL.$JShell$27$Cupcake; 9
+class [LREPL.$JShell$36$Cupcake; 9
 Generic: Cupcake listed by flavor
 Red Velvet
 Orange
@@ -1489,7 +1489,7 @@ Words data:
 <div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">QueueMerge</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
     
-
+        <span class="c1">// created three arrays of integers and three different queue objects </span>
         <span class="n">Object</span><span class="o">[]</span> <span class="n">integer1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
         <span class="n">QueueManagerChanged</span> <span class="n">queue1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManagerChanged</span><span class="p">(</span><span class="s">&quot;Queue1&quot;</span><span class="p">);</span>
         <span class="n">Object</span><span class="o">[]</span> <span class="n">integer2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
@@ -1497,9 +1497,12 @@ Words data:
         <span class="n">Object</span><span class="o">[]</span> <span class="n">integer3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span> <span class="p">};</span>
         <span class="n">QueueManagerChanged</span> <span class="n">queue3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManagerChanged</span><span class="p">(</span><span class="s">&quot;Queue3&quot;</span><span class="p">);</span>
 
+        <span class="c1">// added the integers in integer1 to queue1</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">Object</span> <span class="n">o</span> <span class="p">:</span> <span class="n">integer1</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
         <span class="p">}</span>
+
+        <span class="c1">// added the integers in integer2 to queue2</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">Object</span> <span class="n">o</span> <span class="p">:</span> <span class="n">integer2</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
         <span class="p">}</span>
@@ -1550,6 +1553,65 @@ Words data:
 <pre>Initial Queue #1: 1 3 5 7 
 Initial Queue #2: 2 4 6 8 
 Final Queue Third: 1 2 3 4 5 6 7 8 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Challenge-#3-(Shuffle-the-Queue)">Challenge #3 (Shuffle the Queue)<a class="anchor-link" href="#Challenge-#3-(Shuffle-the-Queue)"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">QueueShuffle</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="n">Object</span><span class="o">[]</span> <span class="n">integers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">};</span>
+
+        <span class="n">QueueManagerChanged</span> <span class="n">queueIntegers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManagerChanged</span><span class="p">(</span><span class="s">&quot;Numbers&quot;</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">Object</span> <span class="n">i</span> <span class="p">:</span> <span class="n">integers</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">queueIntegers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Original Queue: &quot;</span><span class="p">);</span>
+        <span class="n">queueIntegers</span><span class="p">.</span><span class="na">printIntQueue</span><span class="p">();</span>
+
+        <span class="n">queueIntegers</span><span class="p">.</span><span class="na">shuffle</span><span class="p">();</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Queue After Shuffling: &quot;</span><span class="p">);</span>
+        <span class="n">queueIntegers</span><span class="p">.</span><span class="na">printIntQueue</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">QueueShuffle</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Original Queue: 2 4 6 8 10 
+Queue After Shuffling: 10 4 8 6 2 
 </pre>
 </div>
 </div>
