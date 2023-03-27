@@ -1155,6 +1155,119 @@ Words count: 0, data: null
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span> 
+<span class="cm">/**</span>
+<span class="cm"> * Queue Manager</span>
+<span class="cm"> * 1. &quot;has a&quot; Queue</span>
+<span class="cm"> * 2. support management of Queue tasks (aka: titling, adding a list, printing)</span>
+<span class="cm"> */</span>
+<span class="kd">class</span> <span class="nc">QueueManagerChanged</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="c1">// queue data</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span> <span class="c1">// name of queue</span>
+    <span class="kd">protected</span> <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// number of objects in queue</span>
+    <span class="kd">public</span> <span class="kd">final</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span> <span class="c1">// queue object</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastOperation</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">lastObject</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+    <span class="cm">/**</span>
+<span class="cm">     *  Queue constructor</span>
+<span class="cm">     *  Title with empty queue</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">QueueManagerChanged</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getCount</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">count</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Print any array objects from queue</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printQueue</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">lastOperation</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span> <span class="o">+</span> <span class="n">lastObject</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">&quot; count: &quot;</span> <span class="o">+</span> <span class="n">count</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;, data: &quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">data</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printIntQueue</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">data</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Add an objects to queue</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="n">T</span> <span class="n">object</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">//accepts single generic T Object</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">object</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">count</span><span class="o">++</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">lastOperation</span> <span class="o">=</span> <span class="s">&quot;Enqueued&quot;</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">lastObject</span> <span class="o">=</span> <span class="n">object</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">getHead</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">T</span> <span class="nf">delete</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">//accepts single generic T Object</span>
+        <span class="n">T</span> <span class="n">headObject</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">count</span><span class="o">--</span><span class="p">;</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="na">lastOperation</span> <span class="o">=</span> <span class="s">&quot;Dequeued&quot;</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">lastObject</span> <span class="o">=</span> <span class="n">headObject</span><span class="p">.</span><span class="na">toString</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="n">headObject</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">T</span> <span class="nf">peek</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">//accepts single generic T Object</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">getNode</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">node</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">index</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">node</span> <span class="o">=</span> <span class="n">node</span><span class="p">.</span><span class="na">getNext</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">node</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">shuffle</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">node1</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span> <span class="n">node1</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">;</span> <span class="n">node1</span> <span class="o">=</span> <span class="n">node1</span><span class="p">.</span><span class="na">getNext</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
+            <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="n">count</span><span class="p">);</span>
+            
+            <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">node2</span> <span class="o">=</span> <span class="n">getNode</span><span class="p">(</span><span class="n">index</span><span class="p">);</span>
+
+            <span class="n">T</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">node1</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
+            <span class="n">node1</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">node2</span><span class="p">.</span><span class="na">getData</span><span class="p">());</span>
+            <span class="n">node2</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+      
+            <span class="c1">// Swap them</span>
+          <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Hacks">Hacks<a class="anchor-link" href="#Hacks"> </a></h1><h2 id="Collegeboard-Classes-and-Objects---Video-Notes">Collegeboard Classes and Objects - Video Notes<a class="anchor-link" href="#Collegeboard-Classes-and-Objects---Video-Notes"> </a></h2><ul>
@@ -1350,6 +1463,93 @@ Words Count: 0, Data:
 
 Words count: 0
 Words data: 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Challenge-#2-(Merging)">Challenge #2 (Merging)<a class="anchor-link" href="#Challenge-#2-(Merging)"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">QueueMerge</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    
+
+        <span class="n">Object</span><span class="o">[]</span> <span class="n">integer1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+        <span class="n">QueueManagerChanged</span> <span class="n">queue1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManagerChanged</span><span class="p">(</span><span class="s">&quot;Queue1&quot;</span><span class="p">);</span>
+        <span class="n">Object</span><span class="o">[]</span> <span class="n">integer2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
+        <span class="n">QueueManagerChanged</span> <span class="n">queue2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManagerChanged</span><span class="p">(</span><span class="s">&quot;Queue2&quot;</span><span class="p">);</span>
+        <span class="n">Object</span><span class="o">[]</span> <span class="n">integer3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span> <span class="p">};</span>
+        <span class="n">QueueManagerChanged</span> <span class="n">queue3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManagerChanged</span><span class="p">(</span><span class="s">&quot;Queue3&quot;</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">Object</span> <span class="n">o</span> <span class="p">:</span> <span class="n">integer1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">queue1</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Object</span> <span class="n">o</span> <span class="p">:</span> <span class="n">integer2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Initial Queue #1: &quot;</span><span class="p">);</span> 
+        <span class="n">queue1</span><span class="p">.</span><span class="na">printIntQueue</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Initial Queue #2: &quot;</span><span class="p">);</span> 
+        <span class="n">queue2</span><span class="p">.</span><span class="na">printIntQueue</span><span class="p">();</span>
+
+        <span class="k">while</span> <span class="p">(</span><span class="n">queue1</span><span class="p">.</span><span class="na">getCount</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">queue2</span><span class="p">.</span><span class="na">getCount</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">queue1</span><span class="p">.</span><span class="na">getCount</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">queue2</span><span class="p">.</span><span class="na">getCount</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">i1</span> <span class="o">=</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="n">queue1</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
+                <span class="kt">int</span> <span class="n">i2</span> <span class="o">=</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span> <span class="n">queue2</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">i1</span> <span class="o">&lt;=</span> <span class="n">i2</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">queue3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">queue1</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span> <span class="p">{</span>
+                        <span class="n">queue3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">queue2</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
+                    <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">queue1</span><span class="p">.</span><span class="na">getCount</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">queue3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">queue1</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
+            <span class="p">}</span> 
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">queue2</span><span class="p">.</span><span class="na">getCount</span><span class="p">()</span> <span class="o">!=</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">queue3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">queue2</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Final Queue Third: &quot;</span><span class="p">);</span> 
+        <span class="n">queue3</span><span class="p">.</span><span class="na">printIntQueue</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">QueueMerge</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Initial Queue #1: 1 3 5 7 
+Initial Queue #2: 2 4 6 8 
+Final Queue Third: 1 2 3 4 5 6 7 8 
 </pre>
 </div>
 </div>
