@@ -1622,6 +1622,87 @@ Queue After Shuffling: 10 4 8 6 2
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Challenge-#4-(Build-a-Stack)">Challenge #4 (Build a Stack)<a class="anchor-link" href="#Challenge-#4-(Build-a-Stack)"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReverseQueue</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Object</span><span class="o">[]</span> <span class="n">integers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">};</span>
+        <span class="n">QueueManagerChanged</span> <span class="n">queueIntegers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManagerChanged</span><span class="p">(</span><span class="s">&quot;Numbers&quot;</span><span class="p">);</span>
+
+        
+        <span class="k">for</span> <span class="p">(</span><span class="n">Object</span> <span class="n">o</span> <span class="p">:</span> <span class="n">integers</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">queueIntegers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">o</span><span class="p">);</span>
+          <span class="p">}</span>
+  
+        <span class="n">Stack</span><span class="o">&lt;</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">stack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Stack</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Initial Stack: &quot;</span> <span class="o">+</span> <span class="n">stack</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Initial Queue: &quot;</span><span class="p">);</span>
+        <span class="n">queueIntegers</span><span class="p">.</span><span class="na">printIntQueue</span><span class="p">();</span>
+          
+
+        <span class="k">while</span> <span class="p">(</span><span class="n">queueIntegers</span><span class="p">.</span><span class="na">getCount</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">stack</span><span class="p">.</span><span class="na">push</span><span class="p">(</span><span class="n">queueIntegers</span><span class="p">.</span><span class="na">delete</span><span class="p">());</span>
+        <span class="p">}</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Full Stack: &quot;</span> <span class="o">+</span> <span class="n">stack</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Stacked Queue: &quot;</span><span class="p">);</span>
+        <span class="n">queueIntegers</span><span class="p">.</span><span class="na">printIntQueue</span><span class="p">();</span>
+
+
+        <span class="k">while</span> <span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">queueIntegers</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">stack</span><span class="p">.</span><span class="na">pop</span><span class="p">());</span>
+        <span class="p">}</span>
+
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Final Stack: &quot;</span> <span class="o">+</span> <span class="n">stack</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Final Queue: &quot;</span><span class="p">);</span>
+        <span class="n">queueIntegers</span><span class="p">.</span><span class="na">printIntQueue</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="n">ReverseQueue</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Initial Stack: []
+Initial Queue: 2 4 6 8 10 
+Full Stack: [2, 4, 6, 8, 10]
+Stacked Queue: 
+Final Stack: []
+Final Queue: 10 8 6 4 2 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
