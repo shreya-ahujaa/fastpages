@@ -83,40 +83,7 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>// Unit 5 Hacks
-public class Main {
-    public int count;
-    static int babieskilled = 0;
-    public String title;
-    private String monkey;</p>
-
-<pre><code>public Main(int count, String title) {
-    this.count = count;
-    this.title = title;
-    babieskilled++;
-    }
-
-    public void setMonkey(String newMonkey) {
-    this.monkey = newMonkey;
-    }
-    public String getMonkey() {
-    return monkey;
-    }
-
-    public String toString1() {
-    return("title = " + this.title + " count = " + this.count + " monkey = " + this.monkey);
-    }
-    public static void main(String[] args) {
-    Main idk = new Main(5, "idk");
-    Main idk2 = new Main(2, "hii");
-    idk2.setMonkey("germaine");
-    System.out.println(babieskilled);
-    System.out.println(idk.toString1());
-    System.out.println(idk2.toString1());
-    }
-    }
-    Main.main(null);</code></pre>
-
+<h2 id="Unit-5-Hacks">Unit 5 Hacks<a class="anchor-link" href="#Unit-5-Hacks"> </a></h2>
 </div>
 </div>
 </div>
@@ -127,8 +94,77 @@ public class Main {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">// Unit 9</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Monkey</span> <span class="kd">extends</span> <span class="n">Main</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">babieskilled</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">title</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">monkey</span><span class="p">;</span>
+    
+    <span class="kd">public</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">int</span> <span class="n">count</span><span class="p">,</span> <span class="n">String</span> <span class="n">title</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">count</span> <span class="o">=</span> <span class="n">count</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">;</span>
+        <span class="n">babieskilled</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMonkey</span><span class="p">(</span><span class="n">String</span> <span class="n">newMonkey</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">monkey</span> <span class="o">=</span> <span class="n">newMonkey</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kd">public</span> <span class="n">String</span> <span class="nf">getMonkey</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">monkey</span><span class="p">;</span>
+        <span class="p">}</span>
+        
+        <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString1</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span><span class="p">(</span><span class="s">&quot;title = &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">title</span> <span class="o">+</span> <span class="s">&quot; count = &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">count</span> <span class="o">+</span> <span class="s">&quot; monkey = &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">monkey</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Main</span> <span class="n">idk</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Main</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s">&quot;idk&quot;</span><span class="p">);</span>
+        <span class="n">Main</span> <span class="n">idk2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Main</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s">&quot;hii&quot;</span><span class="p">);</span>
+        <span class="n">idk2</span><span class="p">.</span><span class="na">setMonkey</span><span class="p">(</span><span class="s">&quot;germaine&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">babieskilled</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">idk</span><span class="p">.</span><span class="na">toString1</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">idk2</span><span class="p">.</span><span class="na">toString1</span><span class="p">());</span>
+        <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+title = idk count = 5 monkey = null
+title = hii count = 2 monkey = germaine
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Unit-9">Unit 9<a class="anchor-link" href="#Unit-9"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Monkey</span> <span class="kd">extends</span> <span class="n">Main</span> <span class="p">{</span>
     <span class="kd">private</span> <span class="n">String</span> <span class="n">food</span><span class="p">;</span>
     <span class="kd">public</span> <span class="nf">Monkey</span><span class="p">(</span><span class="kt">int</span> <span class="n">count</span><span class="p">,</span> <span class="n">String</span> <span class="n">title</span><span class="p">,</span> <span class="n">String</span> <span class="n">food</span><span class="p">)</span> <span class="p">{</span>
     <span class="kd">super</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">title</span><span class="p">);</span>
@@ -149,9 +185,29 @@ public class Main {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>mwahhahahaha monkey blah8bananannana
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Unit-10">Unit 10<a class="anchor-link" href="#Unit-10"> </a></h2>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -159,8 +215,7 @@ public class Main {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">// Unit 10</span>
-<span class="kd">public</span> <span class="kt">long</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="kt">long</span> <span class="n">monkey</span><span class="p">)</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kt">long</span> <span class="nf">fibonacci</span><span class="p">(</span><span class="kt">long</span> <span class="n">monkey</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">monkey</span><span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">monkey</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
