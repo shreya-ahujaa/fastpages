@@ -153,7 +153,76 @@ title = hii count = 2 monkey = germaine
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Unit-9">Unit 9<a class="anchor-link" href="#Unit-9"> </a></h2>
+<h2 id="Unit-9">Unit 9<a class="anchor-link" href="#Unit-9"> </a></h2><h3 id="Hack-1">Hack 1<a class="anchor-link" href="#Hack-1"> </a></h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">Vehicle</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+<span class="kd">public</span> <span class="nf">Vehicle</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">honk</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;bugger off the road monkey&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">honk</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Car</span> <span class="kd">extends</span> <span class="n">Vehicle</span> <span class="p">{</span>
+<span class="kd">public</span> <span class="n">String</span> <span class="n">make</span><span class="p">;</span>
+<span class="kd">public</span> <span class="n">String</span> <span class="n">model</span><span class="p">;</span>
+<span class="kd">public</span> <span class="nf">Car</span><span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">,</span> <span class="n">String</span> <span class="n">make</span><span class="p">,</span> <span class="n">String</span> <span class="n">model</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">super</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">make</span> <span class="o">=</span> <span class="n">make</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">model</span> <span class="o">=</span> <span class="n">model</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">public</span> <span class="n">String</span> <span class="nf">CarToString</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">&quot; is the name of the &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">make</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">model</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Car</span> <span class="n">babababababooey</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Car</span><span class="p">(</span><span class="s">&quot;babababbababababooey&quot;</span><span class="p">,</span> <span class="s">&quot;toyota&quot;</span><span class="p">,</span> <span class="s">&quot;camry&quot;</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">babababababooey</span><span class="p">.</span><span class="na">CarToString</span><span class="p">());</span>
+    <span class="n">honk</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Car</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>babababbababababooey is the name of the toyota camry
+bugger off the road monkey
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hack-2">Hack 2<a class="anchor-link" href="#Hack-2"> </a></h3>
 </div>
 </div>
 </div>
